@@ -45,7 +45,7 @@ Use WordPress Application Passwords with Basic Auth.
 Example setup:
 
 1. Create or choose user `stock-manager` (role: `Shop Manager` or `Administrator`).
-2. Go to `Users -> Profile` (or `Users -> Your Profile`).
+2. Go to `Users -> Profile`
 3. In **Application Passwords**, set app name to `Postman Stock Sync`.
 4. Click **Add New Application Password**.
 5. WordPress will show a generated password once, for example:
@@ -104,19 +104,6 @@ curl -X POST "https://example.local/wp-json/stock-control/v1/stock" \
   }'
 ```
 
-### Invalid Request (Validation Failure)
-
-```bash
-curl -X POST "https://example.local/wp-json/stock-control/v1/stock" \
-  -u "stock-manager:abcd efgh ijkl mnop qrst uvwx" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "items": [
-      { "sku": "SIMPLE-002", "qty": -10 }
-    ]
-  }'
-```
-
 ## Postman Example
 
 - Method: `POST`
@@ -129,8 +116,6 @@ curl -X POST "https://example.local/wp-json/stock-control/v1/stock" \
 
 ```json
 {
-  "items": [
-    { "sku": "VAR-001-512-black", "qty": 4 }
-  ]
+  "items": [{ "sku": "VAR-001-512-black", "qty": 4 }]
 }
 ```
